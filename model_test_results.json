@@ -1,0 +1,90 @@
+{
+  "working": [],
+  "payment_required": [
+    {
+      "model": "wan-video/wan-2.5-i2v-fast",
+      "description": "Wan fast image-to-video",
+      "message": "You have insufficient credit to run this model. Go to https://replicate.com/account/billing#billing to purchase credit. Once you purchase credit, please wait a few minutes before trying again."
+    }
+  ],
+  "not_found": [
+    {
+      "model": "lucataco/animate-lcm",
+      "description": "Fast animation model",
+      "message": "Model not found"
+    },
+    {
+      "model": "cjwbw/videocrafter2",
+      "description": "VideoCrafter 2",
+      "message": "Model not found"
+    },
+    {
+      "model": "fofr/video-morpher",
+      "description": "Video Morpher",
+      "message": "Model not found"
+    }
+  ],
+  "rate_limited": [
+    {
+      "model": "stability-ai/stable-video-diffusion",
+      "description": "Stable Diffusion video",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "meta/animate-anyone",
+      "description": "Meta animation model",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "wan-video/wan-2.5-t2v-fast",
+      "description": "Wan fast text-to-video",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "wan-video/wan-2.5-t2v",
+      "description": "Wan text-to-video",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "wan-video/wan-2.5-i2v",
+      "description": "Wan image-to-video",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "wavespeedai/wan-2.1-i2v-480p",
+      "description": "Wan 2.1 480p",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "wavespeedai/wan-2.1-t2v-480p",
+      "description": "Wan 2.1 text 480p",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "ali-vilab/i2vgen-xl",
+      "description": "I2VGen XL",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "anotherjesse/zeroscope-v2-xl",
+      "description": "Zeroscope V2 XL",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "anotherjesse/zeroscope-v2-576w",
+      "description": "Zeroscope V2 576w",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "fofr/tooncrafter",
+      "description": "ToonCrafter",
+      "message": "Rate limit exceeded"
+    },
+    {
+      "model": "cjwbw/text2video-zero",
+      "description": "Text2Video Zero",
+      "message": "Rate limit exceeded"
+    }
+  ],
+  "errors": []
+}

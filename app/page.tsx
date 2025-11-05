@@ -150,8 +150,77 @@ export default function Home() {
     },
   ]
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://aivideogen.com'
+
+  // FAQ Schema
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+
+  // WebSite Schema
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'AI Video Generator',
+    url: baseUrl,
+    description: 'Create professional videos instantly with AI. Generate videos from text prompts or animate static images.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${baseUrl}/search?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
+  // Product Schema
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'AI Video Generator',
+    description: 'AI-powered video generation tool that creates professional videos from text prompts or static images',
+    brand: {
+      '@type': 'Brand',
+      name: 'AI Video Generator',
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      offerCount: 3,
+      lowPrice: '0',
+      highPrice: '4999',
+      priceCurrency: 'INR',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '1000',
+    },
+  }
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden pt-16 sm:pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       {/* Floating Particles Background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -160,10 +229,10 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 pb-32">
+      <section className="relative overflow-hidden pb-16 sm:pb-24 md:pb-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.3),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -174,21 +243,21 @@ export default function Home() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: 'spring' }}
-              className="inline-flex items-center gap-2 px-4 py-2 glass-effect rounded-full mb-6 hover-lift"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 glass-effect rounded-full mb-4 sm:mb-6 hover-lift"
             >
-              <Sparkles className="w-4 h-4 text-purple-400 animate-pulse" />
-              <span className="text-sm text-gray-300">Powered by Advanced AI</span>
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 animate-pulse" />
+              <span className="text-xs sm:text-sm text-gray-300">Powered by Advanced AI</span>
             </motion.div>
             
-            <h1 className="text-6xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent block sm:inline">
                 Create Stunning Videos
               </span>
-              <br />
-              <span className="text-white">with AI Magic</span>
+              <br className="hidden sm:block" />
+              <span className="text-white block sm:inline">with AI Magic</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
               Transform your ideas into professional videos in minutes. No design skills required.
             </p>
 
@@ -211,44 +280,44 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="max-w-4xl mx-auto glass-effect rounded-2xl shadow-2xl p-8 hover-lift"
+              className="max-w-4xl mx-auto glass-effect rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 hover-lift"
             >
-              <div className="flex justify-center gap-4 mb-6">
+              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <button
                   onClick={() => setMode('text')}
-                  className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                  className={`px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${
                     mode === 'text'
                       ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/50'
                       : 'bg-white/10 text-gray-300 hover:bg-white/20'
                   }`}
                 >
-                  <Video className="w-5 h-5 inline mr-2" />
+                  <Video className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2" />
                   Text to Video
                 </button>
                 <button
                   onClick={() => setMode('image')}
-                  className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                  className={`px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${
                     mode === 'image'
                       ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/50'
                       : 'bg-white/10 text-gray-300 hover:bg-white/20'
                   }`}
                 >
-                  <ImageIcon className="w-5 h-5 inline mr-2" />
+                  <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2" />
                   Image to Video
                 </button>
               </div>
 
               {mode === 'text' ? (
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   <textarea
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     placeholder="A serene sunset over mountains with birds flying..."
-                    className="w-full h-32 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+                    className="w-full h-24 sm:h-32 px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none text-sm sm:text-base"
                   />
                 </div>
               ) : (
-                <div className="border-2 border-dashed border-white/20 rounded-lg p-8 text-center">
+                <div className="border-2 border-dashed border-white/20 rounded-lg p-4 sm:p-6 md:p-8 text-center">
                   <input
                     type="file"
                     accept="image/*"
@@ -260,8 +329,8 @@ export default function Home() {
                     htmlFor="image-upload"
                     className="cursor-pointer flex flex-col items-center"
                   >
-                    <ImageIcon className="w-12 h-12 text-gray-400 mb-2" />
-                    <span className="text-gray-300">
+                    <ImageIcon className="w-10 h-10 sm:w-12 sm:h-12 text-gray-400 mb-2" />
+                    <span className="text-gray-300 text-sm sm:text-base">
                       Click to upload or drag and drop
                     </span>
                   </label>
@@ -269,8 +338,8 @@ export default function Home() {
                     <div className="mt-4">
                       <img
                         src={imageUrl}
-                        alt="Uploaded"
-                        className="max-w-full h-48 mx-auto rounded-lg object-contain"
+                        alt="Uploaded image for video generation"
+                        className="max-w-full max-h-48 sm:max-h-64 mx-auto rounded-lg object-contain"
                       />
                     </div>
                   )}
@@ -280,17 +349,17 @@ export default function Home() {
               <button
                 onClick={handleGenerate}
                 disabled={isGenerating}
-                className="w-full mt-6 px-6 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70 hover-lift flex items-center justify-center gap-2"
+                className="w-full mt-4 sm:mt-6 px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70 hover-lift flex items-center justify-center gap-2 text-sm sm:text-base"
               >
                 {isGenerating ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    Generating video...
+                    <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                    <span>Generating video...</span>
                   </>
                 ) : (
                   <>
-                    <Sparkles className="w-5 h-5" />
-                    Generate Video
+                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span>Generate Video</span>
                   </>
                 )}
               </button>
@@ -300,10 +369,10 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="max-w-4xl mx-auto mt-8 bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-white/20"
+                className="max-w-4xl mx-auto mt-6 sm:mt-8 bg-white/10 backdrop-blur-lg rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 border border-white/20"
               >
-                <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                  <Play className="w-6 h-6 text-purple-400" />
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                  <Play className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
                   Generated Video
                 </h2>
                 <div className="relative rounded-lg overflow-hidden bg-black">
@@ -317,7 +386,7 @@ export default function Home() {
                 <a
                   href={generatedVideo}
                   download
-                  className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                  className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm sm:text-base"
                 >
                   <Download className="w-4 h-4" />
                   Download Video
@@ -329,9 +398,9 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white/5 backdrop-blur-lg border-y border-white/10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-12 sm:py-16 bg-white/5 backdrop-blur-lg border-y border-white/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => {
               const Icon = stat.icon
               return (
@@ -341,11 +410,11 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-center"
+                  className="text-center px-2 sm:px-0"
                 >
-                  <Icon className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-gray-400 text-sm">{stat.label}</div>
+                  <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mx-auto mb-2" />
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
+                  <div className="text-gray-400 text-xs sm:text-sm">{stat.label}</div>
                 </motion.div>
               )
             })}
@@ -354,23 +423,23 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
               Powerful Features
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-2">
               Everything you need to create amazing videos
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon
               return (
@@ -380,13 +449,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group glass-effect rounded-xl p-6 hover:border-purple-500/50 transition-all hover-lift"
+                className="group glass-effect rounded-xl p-4 sm:p-6 hover:border-purple-500/50 transition-all hover-lift"
               >
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${feature.color} p-3 mb-4 flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r ${feature.color} p-2.5 sm:p-3 mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{feature.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-300">{feature.description}</p>
                 </motion.div>
               )
             })}
@@ -395,23 +464,23 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-white/5 backdrop-blur-lg">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-24 bg-white/5 backdrop-blur-lg">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
               How It Works
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-2">
               Create professional videos in three simple steps
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {[
               { step: '1', title: 'Describe or Upload', desc: 'Enter your text prompt or upload an image' },
               { step: '2', title: 'AI Generates', desc: 'Our AI creates your video in minutes' },
@@ -423,13 +492,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="text-center"
+                className="text-center px-2"
               >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-xl sm:text-2xl font-bold text-white mx-auto mb-3 sm:mb-4">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-300">{item.desc}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-sm sm:text-base text-gray-300">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -437,23 +506,23 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
               What Our Users Say
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-2">
               Join thousands of satisfied creators
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
@@ -461,21 +530,21 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20"
+                className="bg-white/10 backdrop-blur-lg rounded-xl p-4 sm:p-6 border border-white/20"
               >
-                <div className="flex items-center gap-1 mb-4">
+                <div className="flex items-center gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-300 mb-6 italic">"{testimonial.text}"</p>
+                <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 italic">"{testimonial.text}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-2xl">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-xl sm:text-2xl flex-shrink-0">
                     {testimonial.image}
                   </div>
-                  <div>
-                    <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-sm text-gray-400">{testimonial.role}</div>
+                  <div className="min-w-0">
+                    <div className="font-semibold text-white text-sm sm:text-base truncate">{testimonial.name}</div>
+                    <div className="text-xs sm:text-sm text-gray-400 truncate">{testimonial.role}</div>
                   </div>
                 </div>
               </motion.div>
@@ -485,49 +554,49 @@ export default function Home() {
       </section>
 
       {/* Pricing CTA */}
-      <section className="py-24 bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-lg border-y border-white/10">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-lg border-y border-white/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 px-2">
               Choose the perfect plan for your needs. Start free, upgrade anytime.
             </p>
             <Link
               href="/pricing"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg shadow-purple-500/50"
+              className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg shadow-purple-500/50 text-sm sm:text-base hover-lift"
             >
               View Pricing Plans
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
           </motion.div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 px-2">
               Everything you need to know
             </p>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -535,10 +604,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20"
+                className="bg-white/10 backdrop-blur-lg rounded-xl p-4 sm:p-6 border border-white/20"
               >
-                <h3 className="text-xl font-bold text-white mb-2">{faq.question}</h3>
-                <p className="text-gray-300">{faq.answer}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{faq.question}</h3>
+                <p className="text-sm sm:text-base text-gray-300">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

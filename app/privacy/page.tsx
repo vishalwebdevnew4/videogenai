@@ -2,12 +2,35 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - AI Video Generator',
-  description: 'Privacy policy for AI Video Generator. Learn how we protect and use your data.',
+  description: 'Privacy policy for AI Video Generator. Learn how we protect and use your data. We implement appropriate security measures to protect your personal information.',
+  keywords: [
+    'privacy policy',
+    'data protection',
+    'user privacy',
+    'data security',
+  ],
+  openGraph: {
+    title: 'Privacy Policy - AI Video Generator',
+    description: 'Privacy policy for AI Video Generator. Learn how we protect and use your data.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Privacy Policy - AI Video Generator',
+    description: 'Privacy policy for AI Video Generator. Learn how we protect and use your data.',
+  },
+  alternates: {
+    canonical: '/privacy',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-4 py-16">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16">
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-4xl font-bold text-white mb-8">Privacy Policy</h1>
         <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 space-y-6 text-gray-300">

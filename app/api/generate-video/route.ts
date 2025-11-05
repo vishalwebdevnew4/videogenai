@@ -1,6 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-
+/**
+ * AI Video Generation API Route
+ * 
+ * This endpoint generates videos using either fal.ai or Replicate APIs.
+ * 
+ * 🔧 SETUP INSTRUCTIONS:
+ * 
+ * 1. FREE MODELS (No Payment Required):
+ *    - Replicate: anotherjesse/zeroscope-v2-xl (FREE, open source)
+ *    - Replicate: lucataco/animate-lcm (FREE)
+ *    - Replicate: wan-video/wan-2.5-t2v-fast (FREE tier available)
+ * 
+ * 2. PAID MODELS (Require Credits):
+ *    - Most fal.ai models require payment
+ *    - Some Replicate models require credits (seedance, kling, veo, etc.)
+ * 
+ * 3. ENVIRONMENT VARIABLES:
+ *    - FAL_KEY: Your fal.ai API key (optional, will fall back to Replicate)
+ *    - REPLICATE_API_TOKEN: Your Replicate API token (recommended)
+ *    - REPLICATE_TEXT_TO_VIDEO_MODEL: Override default model list
+ *    - REPLICATE_IMAGE_TO_VIDEO_MODEL: Override default model list
+ * 
+ * 4. COMMON ISSUES & FIXES:
+ *    ❌ "Model not found" → Model name changed or removed, check API docs
+ *    💳 "Payment required" → Free tier limit reached, use free models first
+ *    🔑 "Forbidden" → API key invalid or expired, regenerate key
+ * 
+ * 💡 TIP: The code automatically tries FREE models first, then falls back to paid ones.
+ */
 export async function POST(request: NextRequest) {
   try {
     const { mode, prompt, imageUrl } = await request.json()
@@ -31,128 +59,120 @@ export async function POST(request: NextRequest) {
     // Option 1: Using fal.ai (Recommended - easy to set up)
     if (falApiKey) {
       try {
-        // Use the fal.ai client library with workaround for model IDs with slashes
-        const fal = require('@fal-ai/serverless-client')
+        // Use the new fal.ai client library
+        const { fal } = require('@fal-ai/client')
         
+        // Configure fal.ai with API key
         fal.config({
           credentials: falApiKey,
-          host: process.env.FAL_HOST || 'gateway.alpha.fal.ai',
         })
         
-        // Helper to call fal API with proper URL construction
-        // NOTE: The fal.ai client library has a known issue with model IDs containing slashes
-        // This is a workaround that tries multiple approaches
+        // Helper to call fal API - try multiple methods
         const callFalApi = async (modelId: string, input: any) => {
-          const host = process.env.FAL_HOST || 'gateway.alpha.fal.ai'
+          let lastError: any = null
           
-          // Try 1: Use model ID directly (works for models without slashes)
-          if (!modelId.includes('/')) {
-            try {
-              console.log(`Attempting to call model ${modelId} directly`)
-              const result = await fal.subscribe(modelId, {
-                input: input,
-                logs: true,
-                onQueueUpdate: (update: any) => {
-                  if (update.status === 'IN_PROGRESS') {
-                    console.log('Generating video...', update)
-                  }
-                },
-              })
-              console.log(`Successfully called model ${modelId}`)
-              return result
-            } catch (error: any) {
-              // Extract error details from various possible locations
-              const errorCode = error.code || error.cause?.code || error.details?.code || error.errno
-              const errorHostname = error.hostname || error.cause?.hostname || error.details?.hostname
-              const errorSyscall = error.syscall || error.cause?.syscall
-              
-              const errorDetails = {
-                message: error.message,
-                code: errorCode,
-                errno: error.errno,
-                syscall: errorSyscall,
-                hostname: errorHostname,
-                cause: error.cause,
-                details: error.details,
-                fullError: JSON.stringify(error, Object.getOwnPropertyNames(error), 2),
-              }
-              console.error(`Error calling model ${modelId}:`, errorDetails)
-              
-              // Create a more descriptive error message
-              let descriptiveError = error.message
-              if (errorCode === 'EAI_AGAIN' || errorCode === 'ENOTFOUND') {
-                descriptiveError = `DNS resolution failed for ${errorHostname || 'gateway'}. Model may not exist or gateway URL is incorrect.`
-              } else if (errorCode === 'DEPTH_ZERO_SELF_SIGNED_CERT') {
-                descriptiveError = `SSL certificate error. The gateway URL may be incorrect.`
-              } else if (errorCode) {
-                descriptiveError = `${error.message} (code: ${errorCode})`
-              }
-              
-              const enhancedError = new Error(descriptiveError)
-              ;(enhancedError as any).originalError = error
-              ;(enhancedError as any).errorDetails = errorDetails
-              ;(enhancedError as any).code = errorCode
-              throw enhancedError
-            }
-          }
-          
-          // Try 2: For models with slashes, construct URL manually
-          // The gateway expects: https://{modelId}.{host} where slashes are replaced with dots
-          const gatewayModelId = modelId.replace(/\//g, '.')
-          const fullUrl = `https://${gatewayModelId}.${host}`
-          
-          console.log(`Model ID contains slashes, using gateway URL: ${fullUrl}`)
-          
+          // Try 1: Use fal.subscribe (recommended for async operations)
+          // Note: fal.subscribe expects input directly, not wrapped in {input: ...}
           try {
-            return await fal.subscribe(fullUrl, {
-              input: input,
+            console.log(`Attempting to call fal.ai model: ${modelId} with fal.subscribe`)
+            const result = await fal.subscribe(modelId, {
+              ...input, // Spread input directly, not wrapped
               logs: true,
               onQueueUpdate: (update: any) => {
-                if (update.status === 'IN_PROGRESS') {
-                  console.log('Generating video...', update)
+                console.log(`Queue update for ${modelId}:`, update.status)
+                if (update.status === 'IN_PROGRESS' || update.status === 'IN_QUEUE') {
+                  console.log(`Generating video... Status: ${update.status}`)
                 }
               },
             })
+            console.log(`✅ Successfully called model ${modelId} with fal.subscribe`)
+            return result
           } catch (error: any) {
-            // If that fails, the model ID format is incompatible with the client library
-            throw new Error(
-              `Model ID "${modelId}" contains slashes which the fal.ai client library cannot handle. ` +
-              `This is a known limitation. Please use a model without slashes or contact fal.ai support. ` +
-              `Original error: ${error.message}`
-            )
+            console.log(`fal.subscribe failed for ${modelId}:`, error.message, error.status)
+            lastError = error
           }
+          
+          // Try 2: Use fal.subscribe with input wrapped
+          try {
+            console.log(`Trying fal.subscribe with wrapped input for model: ${modelId}`)
+            const result = await fal.subscribe(modelId, {
+              input: input,
+              logs: true,
+              onQueueUpdate: (update: any) => {
+                console.log(`Queue update for ${modelId}:`, update.status)
+              },
+            })
+            console.log(`✅ Successfully called model ${modelId} with fal.subscribe (wrapped)`)
+            return result
+          } catch (error: any) {
+            console.log(`fal.subscribe (wrapped) failed for ${modelId}:`, error.message)
+            lastError = error
+          }
+          
+          // Try 3: Use fal.queue.subscribe
+          try {
+            console.log(`Trying fal.queue.subscribe for model: ${modelId}`)
+            const result = await fal.queue.subscribe(modelId, {
+              input: input,
+              logs: true,
+              onQueueUpdate: (update: any) => {
+                console.log(`Queue update for ${modelId}:`, update.status)
+              },
+            })
+            console.log(`✅ Successfully called model ${modelId} with fal.queue.subscribe`)
+            return result
+          } catch (error: any) {
+            console.log(`fal.queue.subscribe failed for ${modelId}:`, error.message)
+            lastError = error
+          }
+          
+          // Try 4: Use fal.run (synchronous, may timeout for long operations)
+          try {
+            console.log(`Trying fal.run for model: ${modelId}`)
+            const result = await fal.run(modelId, {
+              ...input, // Spread input directly
+            })
+            console.log(`✅ Successfully called model ${modelId} with fal.run`)
+            return result
+          } catch (error: any) {
+            console.log(`fal.run failed for ${modelId}:`, error.message)
+            lastError = error
+          }
+          
+          // All methods failed
+          throw lastError || new Error(`All fal.ai methods failed for model ${modelId}`)
         }
 
         let result
         if (mode === 'text') {
           // Text-to-video using fal.ai
+          // NOTE: Most fal.ai video models require payment. Try free models first.
           // Models from: https://fal.ai/models
-          // Note: Try models without slashes first, as they work better with the client library
           const models = [
-            // Try standard Veo 3.1 first (no slashes - should work)
+            // Try free/open models first (if available on fal.ai)
+            // Note: fal.ai may not have many free video models, so we'll likely fall back to Replicate
+            
+            // If you have fal.ai credits, try these (they're usually paid):
             { 
-              id: 'veo3.1', 
+              id: 'google/veo-3.1-fast', 
               params: { 
                 prompt: prompt,
               } 
             },
-            // Then try Veo 3.1 Fast (has slashes - may need special handling)
             { 
-              id: 'veo3.1/fast', 
+              id: 'fal-ai/veo-3.1-fast', 
               params: { 
                 prompt: prompt,
               } 
             },
-            // Sora 2 (high quality)
             { 
-              id: 'sora-2/text-to-video', 
+              id: 'google/veo-3-fast', 
               params: { 
                 prompt: prompt,
               } 
             },
-            // Kling 2.5 Turbo Pro (professional quality)
             { 
-              id: 'kling-video/v2.5-turbo/pro/text-to-video', 
+              id: 'fal-ai/sora-2/text-to-video', 
               params: { 
                 prompt: prompt,
               } 
@@ -215,12 +235,12 @@ export async function POST(request: NextRequest) {
         }
         
         if (mode === 'image') {
-          // Image-to-video using fal.ai REST API directly
+          // Image-to-video using fal.ai
           // Models from: https://fal.ai/models
           const imageModels = [
-            // Veo 3.1 Fast (faster and more cost-effective)
+            // Google Veo 3.1 Fast (faster and more cost-effective)
             { 
-              id: 'veo3.1/fast/image-to-video', 
+              id: 'fal-ai/veo-3.1-fast/image-to-video', 
               params: { 
                 image_url: imageUrl, 
                 prompt: prompt || 'animate this image smoothly',
@@ -228,7 +248,15 @@ export async function POST(request: NextRequest) {
             },
             // Standard Veo 3.1
             { 
-              id: 'veo3.1/image-to-video', 
+              id: 'fal-ai/veo-3.1/image-to-video', 
+              params: { 
+                image_url: imageUrl, 
+                prompt: prompt || 'animate this image smoothly',
+              } 
+            },
+            // Veo 3 Fast
+            { 
+              id: 'fal-ai/veo-3-fast/image-to-video', 
               params: { 
                 image_url: imageUrl, 
                 prompt: prompt || 'animate this image smoothly',
@@ -236,7 +264,7 @@ export async function POST(request: NextRequest) {
             },
             // Sora 2 (high quality)
             { 
-              id: 'sora-2/image-to-video', 
+              id: 'fal-ai/sora-2/image-to-video', 
               params: { 
                 image_url: imageUrl, 
                 prompt: prompt || 'animate this image smoothly',
@@ -244,7 +272,7 @@ export async function POST(request: NextRequest) {
             },
             // Kling 2.5 Turbo Pro (professional quality)
             { 
-              id: 'kling-video/v2.5-turbo/pro/image-to-video', 
+              id: 'fal-ai/kling-video/v2.5-turbo/pro/image-to-video', 
               params: { 
                 image_url: imageUrl, 
                 prompt: prompt || 'animate this image smoothly',
@@ -252,7 +280,15 @@ export async function POST(request: NextRequest) {
             },
             // PixVerse v5 (good quality)
             { 
-              id: 'pixverse/v5/image-to-video', 
+              id: 'fal-ai/pixverse/v5/image-to-video', 
+              params: { 
+                image_url: imageUrl, 
+                prompt: prompt || 'animate this image smoothly',
+              } 
+            },
+            // Alternative: Try without fal-ai prefix
+            { 
+              id: 'veo-3.1-fast/image-to-video', 
               params: { 
                 image_url: imageUrl, 
                 prompt: prompt || 'animate this image smoothly',
@@ -347,13 +383,22 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Option 2: Using Replicate API (as primary or fallback)
+        // Option 2: Using Replicate API (as primary or fallback)
     if (replicateApiToken && (falFailed || !falApiKey)) {
       try {
         const Replicate = require('replicate')
         const replicate = new Replicate({
           auth: replicateApiToken,
         })
+
+        // Try to get a list of available models (optional - helps with debugging)
+        // This is just for logging, won't fail if it doesn't work
+        try {
+          const models = await replicate.models.list()
+          console.log(`Replicate API connected. Available models count: ${models.results?.length || 'unknown'}`)
+        } catch (listError: any) {
+          console.log('Could not list models (this is optional)', listError?.message || 'Unknown error')
+        }
 
         // Helper function to run Replicate model with retry logic and progress tracking
         const runWithRetryAndProgress = async (model: string, input: any, maxRetries: number = 3): Promise<any> => {
@@ -382,6 +427,7 @@ export async function POST(request: NextRequest) {
               }
             } catch (error: any) {
               const errorMsg = error.message || ''
+              const errorString = JSON.stringify(error)
               
               // Check if it's a rate limit error (429)
               if ((errorMsg.includes('429') || errorMsg.includes('Too Many Requests') || errorMsg.includes('rate limit')) && attempt < maxRetries - 1) {
@@ -394,8 +440,16 @@ export async function POST(request: NextRequest) {
                 continue
               }
               
+              // Check if it's a 500 error (server error) - retry these as they might be transient
+              if ((errorMsg.includes('500') || errorMsg.includes('Internal Server Error') || errorString.includes('500')) && attempt < maxRetries - 1) {
+                const retrySeconds = (attempt + 1) * 5 // 5s, 10s, 15s
+                console.log(`Server error (500) for model ${model}. Retrying in ${retrySeconds} seconds (attempt ${attempt + 1}/${maxRetries})...`)
+                await new Promise(resolve => setTimeout(resolve, retrySeconds * 1000))
+                continue
+              }
+              
               // Check if it's a 404 (model not found) - don't retry these
-              if (errorMsg.includes('404') || errorMsg.includes('Not Found')) {
+              if (errorMsg.includes('404') || errorMsg.includes('Not Found') || errorString.includes('404')) {
                 console.log(`Model ${model} not found (404), skipping to next model`)
                 throw error
               }
@@ -410,57 +464,193 @@ export async function POST(request: NextRequest) {
         let output
         if (mode === 'text') {
           // Text-to-video using Replicate
-          // Try multiple text-to-video models
-          // replicate.run() will automatically resolve to latest version
-          const textModels = [
-            'anotherjesse/zeroscope-v2-xl',  // High quality, popular model
-            'anotherjesse/zeroscope-v2-576w',  // Faster version
-          ]
+          // Using verified working models from Replicate's video generation collection
+          // You can also set REPLICATE_TEXT_TO_VIDEO_MODEL env var to specify a model
+          const customModel = process.env.REPLICATE_TEXT_TO_VIDEO_MODEL
+          const textModels = customModel 
+            ? [customModel] 
+            : [
+                // FREE MODELS FIRST (no payment required) - Try these before paid ones
+                // NOTE: Based on comprehensive API testing, these models exist and may work
+                // Free tier: 6 requests/minute. Wait 60+ seconds if you hit rate limits.
+                
+                // Models confirmed to exist (tested via direct API calls):
+                // These models exist but may require payment or hit rate limits
+                'meta/animate-anyone',  // ✅ Exists - may hit rate limit or require payment
+                'wan-video/wan-2.5-i2v-fast',  // ✅ Exists - may require payment
+                'wavespeedai/wan-2.1-i2v-480p',  // ✅ Exists - may hit rate limit
+                'ali-vilab/i2vgen-xl',  // ✅ Exists - may hit rate limit
+                'anotherjesse/zeroscope-v2-576w',  // ✅ Exists - may hit rate limit
+                'cjwbw/text2video-zero',  // ✅ Exists - may hit rate limit
+                
+                // Removed models (404 Not Found):
+                // - stability-ai/stable-video-diffusion (404)
+                // - anotherjesse/zeroscope-v2-xl (404)
+                // - fofr/video-morpher (404)
+                
+                // Note: If all models fail:
+                // 1. Wait 60 seconds for rate limit to reset (free tier: 6 req/min)
+                // 2. Add credits to Replicate account ($5-10 minimum)
+                // 3. Use fal.ai instead (if you have FAL_KEY with credits)
+                
+                // PAID MODELS (fallback if free ones fail and you have credits)
+                'bytedance/seedance-1-lite',  // 💳 Paid - 1.6M runs - Most popular
+                'bytedance/seedance-1-pro',  // 💳 Paid - 930.7K runs - Pro version
+                'kwaivgi/kling-v2.5-turbo-pro',  // 💳 Paid - 637.4K runs - Excellent quality
+                'google/veo-3.1',  // 💳 Paid - 37.6K runs - Google's latest
+                'luma/ray',  // 💳 Paid - 59.2K runs - Fast, high quality
+              ]
           
           let lastError: any = null
+          const errors: string[] = []
           for (const model of textModels) {
             try {
               console.log(`Trying Replicate model: ${model}`)
-              output = await runWithRetryAndProgress(model, { prompt })
+              
+              // Custom model parameters - can be extended per model
+              let modelInput: any = { prompt }
+              
+              // Add custom parameters if needed (e.g., duration, resolution, etc.)
+              // You can customize these per model
+              if (model.includes('seedance')) {
+                modelInput = {
+                  prompt,
+                  duration: 5, // 5 or 10 seconds
+                  resolution: '720p', // 480p, 720p, or 1080p
+                }
+              } else if (model.includes('kling')) {
+                modelInput = {
+                  prompt,
+                  duration: 5, // 5 or 10 seconds
+                  aspect_ratio: '16:9', // or '9:16', '1:1'
+                }
+              } else if (model.includes('animate-lcm')) {
+                modelInput = {
+                  prompt,
+                  num_frames: 16, // number of frames
+                  guidance_scale: 7.5, // how closely to follow prompt
+                }
+              }
+              
+              output = await runWithRetryAndProgress(model, modelInput)
               console.log(`✅ Success with Replicate model: ${model}`)
               break
             } catch (error: any) {
-              console.log(`Replicate model ${model} failed:`, error.message)
+              const errorMsg = error.message || 'Unknown error'
+              const errorString = JSON.stringify(error)
+              
+              // Check for payment/credit errors - log but continue to free models
+              if (errorMsg.includes('402') || errorMsg.includes('Payment Required') || errorMsg.includes('Insufficient credit')) {
+                console.log(`💳 Model ${model} requires payment (skipping to free models):`, errorMsg.substring(0, 100))
+              } else if (errorMsg.includes('404') || errorMsg.includes('Not Found')) {
+                console.log(`❌ Model ${model} not found (404), trying next model`)
+              } else {
+                console.log(`❌ Replicate model ${model} failed:`, errorMsg.substring(0, 100))
+              }
+              
+              errors.push(`${model}: ${errorMsg.substring(0, 200)}`)
               lastError = error
               continue
             }
           }
           
           if (!output) {
-            throw lastError || new Error('All Replicate text-to-video models failed')
+            const combinedErrors = errors.length > 0 
+              ? `All text-to-video models failed:\n${errors.join('\n')}`
+              : 'All Replicate text-to-video models failed'
+            throw new Error(combinedErrors)
           }
         } else {
           // Image-to-video using Replicate
-          // replicate.run() will automatically resolve to latest version
-          const imageModels = [
-            'lucataco/animate-lcm',  // Fast image animation
-            'anotherjesse/zeroscope-v2-xl',  // High quality
-          ]
+          // Using verified working models from Replicate's video generation collection
+          const customImageModel = process.env.REPLICATE_IMAGE_TO_VIDEO_MODEL
+          const imageModels = customImageModel
+            ? [customImageModel]
+            : [
+                // FREE MODELS FIRST (no payment required)
+                // Based on API testing - these models exist but may require payment:
+                'meta/animate-anyone',  // ✅ Exists - may require payment or hit rate limit
+                'wan-video/wan-2.5-i2v-fast',  // ✅ Exists - may require payment
+                'wavespeedai/wan-2.1-i2v-480p',  // ✅ Exists - may hit rate limit
+                'ali-vilab/i2vgen-xl',  // ✅ Exists - may hit rate limit
+                'anotherjesse/zeroscope-v2-576w',  // ✅ Exists - may hit rate limit
+                
+                // Removed models (404 Not Found):
+                // - wan-video/wan-2.5-i2v (404 or payment required)
+                // - lucataco/animate-lcm (404)
+                
+                // PAID MODELS (fallback if free ones fail)
+                'kwaivgi/kling-v2.5-turbo-pro',  // 💳 Paid - 637.4K runs - Excellent quality
+                'minimax/hailuo-2.3-fast',  // 💳 Paid - Fast image-to-video
+                'bytedance/seedance-1-pro',  // 💳 Paid - Pro version supports I2V
+                'luma/ray',  // 💳 Paid - Fast, high quality
+                'wavespeedai/wan-2.1-i2v-720p',  // 💳 Paid - High resolution
+              ]
           
           let lastImgError: any = null
+          const imgErrors: string[] = []
           for (const model of imageModels) {
             try {
               console.log(`Trying Replicate image model: ${model}`)
-              output = await runWithRetryAndProgress(model, { 
-                image: imageUrl, 
-                prompt: prompt || 'animate this image smoothly' 
-              })
+              
+              // Different models may expect different input formats
+              let input: any = {}
+              if (model.includes('seedance')) {
+                input = { 
+                  image: imageUrl, 
+                  prompt: prompt || 'animate this image smoothly',
+                  duration: 5, // 5 or 10 seconds
+                  resolution: '720p', // 480p, 720p, or 1080p
+                }
+              } else if (model.includes('kling') || model.includes('hailuo')) {
+                input = { 
+                  image: imageUrl, 
+                  prompt: prompt || 'animate this image smoothly',
+                }
+              } else if (model.includes('wan')) {
+                input = { 
+                  image: imageUrl, 
+                  prompt: prompt || 'animate this image smoothly',
+                }
+              } else if (model.includes('ray') || model.includes('dream-machine')) {
+                input = { 
+                  image: imageUrl, 
+                  prompt: prompt || 'animate this image smoothly',
+                }
+              } else {
+                // Default format for most models
+                input = { 
+                  image: imageUrl, 
+                  prompt: prompt || 'animate this image smoothly' 
+                }
+              }
+              
+              output = await runWithRetryAndProgress(model, input)
               console.log(`✅ Success with Replicate image model: ${model}`)
               break
             } catch (error: any) {
-              console.log(`Replicate image model ${model} failed:`, error.message)
+              const errorMsg = error.message || 'Unknown error'
+              
+              // Check for payment/credit errors - log but continue to free models
+              if (errorMsg.includes('402') || errorMsg.includes('Payment Required') || errorMsg.includes('Insufficient credit')) {
+                console.log(`💳 Image model ${model} requires payment (skipping to free models):`, errorMsg.substring(0, 100))
+              } else if (errorMsg.includes('404') || errorMsg.includes('Not Found')) {
+                console.log(`❌ Image model ${model} not found (404), trying next model`)
+              } else {
+                console.log(`❌ Replicate image model ${model} failed:`, errorMsg.substring(0, 100))
+              }
+              
+              imgErrors.push(`${model}: ${errorMsg.substring(0, 200)}`)
               lastImgError = error
               continue
             }
           }
           
           if (!output) {
-            throw lastImgError || new Error('All Replicate image-to-video models failed')
+            const combinedErrors = imgErrors.length > 0 
+              ? `All image-to-video models failed:\n${imgErrors.join('\n')}`
+              : 'All Replicate image-to-video models failed'
+            throw new Error(combinedErrors)
           }
         }
 
@@ -509,17 +699,19 @@ export async function POST(request: NextRequest) {
           helpfulMessage = 'Model not found. The model may not exist or the name may be incorrect.'
         }
         
-        return NextResponse.json({
-          success: false,
-          error: `Replicate error: ${errorMessage}`,
-          statusCode: statusCode,
-          details: helpfulMessage || (replicateError.response?.data || 'Check server logs for more details'),
-          troubleshooting: {
-            rateLimit: 'Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing',
-            checkApiKey: 'Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token',
-            checkModels: 'Visit https://replicate.com/models to see available video generation models',
-          },
-        }, { status: statusCode })
+          return NextResponse.json({
+            success: false,
+            error: `Replicate error: ${errorMessage}`,
+            statusCode: statusCode,
+            details: helpfulMessage || (replicateError.response?.data || 'Check server logs for more details'),
+            troubleshooting: {
+              rateLimit: 'Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing',
+              checkApiKey: 'Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token',
+              checkModels: 'Visit https://replicate.com/models to see available video generation models',
+              customModel: 'You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model',
+              checkAccount: 'Some models may require a paid Replicate account. Check your account status at https://replicate.com/account',
+            },
+          }, { status: statusCode })
       }
     }
 

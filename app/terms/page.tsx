@@ -2,12 +2,35 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Terms of Service - AI Video Generator',
-  description: 'Terms of service for AI Video Generator. Read our terms and conditions.',
+  description: 'Terms of service for AI Video Generator. Read our terms and conditions, payment terms, user content policies, and limitation of liability.',
+  keywords: [
+    'terms of service',
+    'terms and conditions',
+    'user agreement',
+    'service terms',
+  ],
+  openGraph: {
+    title: 'Terms of Service - AI Video Generator',
+    description: 'Terms of service for AI Video Generator. Read our terms and conditions.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Terms of Service - AI Video Generator',
+    description: 'Terms of service for AI Video Generator. Read our terms and conditions.',
+  },
+  alternates: {
+    canonical: '/terms',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-4 py-16">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16">
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-4xl font-bold text-white mb-8">Terms of Service</h1>
         <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 space-y-6 text-gray-300">

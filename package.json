@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fal-ai/serverless-client": "^0.7.0",
+    "@fal-ai/client": "^1.7.2",
     "axios": "^1.6.2",
     "bcryptjs": "^2.4.3",
     "framer-motion": "^10.16.16",

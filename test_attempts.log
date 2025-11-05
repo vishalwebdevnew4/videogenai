@@ -1,0 +1,744 @@
+🚀 Testing API until success...
+URL: http://localhost:3001/api/generate-video
+Max attempts: 50
+
+==========================================
+Attempt 1 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 2 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 3 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 4 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 5 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 6 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 7 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 8 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 9 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 10 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 11 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 12 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 13 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 14 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 15 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 16 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 17 of 50
+Waiting 40 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 18 of 50
+Waiting 50 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 19 of 50
+Waiting 60 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 20 of 50
+Waiting 70 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 21 of 50
+Waiting 80 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 22 of 50
+Waiting 90 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 23 of 50
+Waiting 100 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 24 of 50
+Waiting 110 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 25 of 50
+Waiting 120 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 26 of 50
+Waiting 130 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 27 of 50
+Waiting 140 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 28 of 50
+Waiting 150 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 29 of 50
+Waiting 160 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 30 of 50
+Waiting 170 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 31 of 50
+Waiting 180 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 32 of 50
+Waiting 190 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 33 of 50
+Waiting 200 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 52)
+   Response: 
+==========================================
+Attempt 34 of 50
+Waiting 210 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 35 of 50
+Waiting 220 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 36 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 37 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 38 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+Response:
+{
+    "success": false,
+    "error": "Replicate error: All text-to-video models failed:\nmeta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nwan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to \nwavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\nali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nanotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\ncjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {\"detail\":\"The requested resource could not be found.\",\"status\":404}\n.\nbytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to r\nbytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to ru\nkwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit t\ngoogle/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this mod\nluma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {\"title\":\"Insufficient credit\",\"detail\":\"You have insufficient credit to run this model. Go",
+    "statusCode": 404,
+    "details": "Model not found. The model may not exist or the name may be incorrect.",
+    "troubleshooting": {
+        "rateLimit": "Free tier: 6 requests/min. Add payment method for higher limits at https://replicate.com/account/billing",
+        "checkApiKey": "Verify REPLICATE_API_TOKEN in .env.local matches your Replicate token",
+        "checkModels": "Visit https://replicate.com/models to see available video generation models",
+        "customModel": "You can set REPLICATE_TEXT_TO_VIDEO_MODEL=model-name in .env.local to use a specific model",
+        "checkAccount": "Some models may require a paid Replicate account. Check your account status at https://replicate.com/account"
+    }
+}
+
+❌ Model not found (404) - trying next model in list...
+
+==========================================
+Attempt 39 of 50
+Waiting 30 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 52)
+   Response: 
+==========================================
+Attempt 40 of 50
+Waiting 40 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 41 of 50
+Waiting 50 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 42 of 50
+Waiting 60 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 43 of 50
+Waiting 70 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 44 of 50
+Waiting 80 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 45 of 50
+Waiting 90 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 46 of 50
+Waiting 100 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 47 of 50
+Waiting 110 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 48 of 50
+Waiting 120 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 49 of 50
+Waiting 130 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+==========================================
+Attempt 50 of 50
+Waiting 140 seconds before test...
+==========================================
+📤 Sending request...
+Prompt: 'a cat walking'
+
+❌ Connection error (exit code: 7)
+   Response: 
+❌ Max attempts reached (50). Could not generate video.
+💡 Suggestions:
+   1. Add credits to Replicate: https://replicate.com/account/billing
+   2. Wait longer for rate limits to reset
+   3. Check server logs for more details

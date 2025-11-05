@@ -1,0 +1,575 @@
+
+> ai-video-generator@1.0.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.33
+  - Local:        http://localhost:3001
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.7s
+ ○ Compiling /api/generate-video ...
+ ✓ Compiled /api/generate-video in 2.1s (107 modules)
+Trying model: google/veo-3.1-fast
+Attempting to call fal.ai model: google/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for google/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3.1-fast
+fal.subscribe (wrapped) failed for google/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3.1-fast
+fal.queue.subscribe failed for google/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3.1-fast
+fal.run failed for google/veo-3.1-fast: Not Found
+❌ Model google/veo-3.1-fast failed: Not Found 
+Trying model: fal-ai/veo-3.1-fast
+Attempting to call fal.ai model: fal-ai/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for fal-ai/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: fal-ai/veo-3.1-fast
+fal.subscribe (wrapped) failed for fal-ai/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: fal-ai/veo-3.1-fast
+fal.queue.subscribe failed for fal-ai/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/veo-3.1-fast
+fal.run failed for fal-ai/veo-3.1-fast: Not Found
+❌ Model fal-ai/veo-3.1-fast failed: Not Found 
+Trying model: google/veo-3-fast
+Attempting to call fal.ai model: google/veo-3-fast with fal.subscribe
+fal.subscribe failed for google/veo-3-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3-fast
+fal.subscribe (wrapped) failed for google/veo-3-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3-fast
+fal.queue.subscribe failed for google/veo-3-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3-fast
+fal.run failed for google/veo-3-fast: Not Found
+❌ Model google/veo-3-fast failed: Not Found 
+Trying model: fal-ai/sora-2/text-to-video
+Attempting to call fal.ai model: fal-ai/sora-2/text-to-video with fal.subscribe
+fal.subscribe failed for fal-ai/sora-2/text-to-video: Forbidden 403
+Trying fal.subscribe with wrapped input for model: fal-ai/sora-2/text-to-video
+fal.subscribe (wrapped) failed for fal-ai/sora-2/text-to-video: Forbidden
+Trying fal.queue.subscribe for model: fal-ai/sora-2/text-to-video
+fal.queue.subscribe failed for fal-ai/sora-2/text-to-video: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/sora-2/text-to-video
+fal.run failed for fal-ai/sora-2/text-to-video: Forbidden
+❌ Model fal-ai/sora-2/text-to-video failed: Forbidden 
+fal.ai failed, will try Replicate API as fallback
+Replicate API connected. Available models count: 25
+Trying Replicate model: meta/animate-anyone
+Starting prediction for model meta/animate-anyone (attempt 1/3)
+Model meta/animate-anyone not found (404), skipping to next model
+❌ Model meta/animate-anyone not found (404), trying next model
+Trying Replicate model: wan-video/wan-2.5-i2v-fast
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 1/3)
+Rate limit hit for model wan-video/wan-2.5-i2v-fast. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 2/3)
+💳 Model wan-video/wan-2.5-i2v-fast requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with st
+Trying Replicate model: wavespeedai/wan-2.1-i2v-480p
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 1/3)
+Rate limit hit for model wavespeedai/wan-2.1-i2v-480p. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 2/3)
+💳 Model wavespeedai/wan-2.1-i2v-480p requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with 
+Trying Replicate model: ali-vilab/i2vgen-xl
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 1/3)
+Rate limit hit for model ali-vilab/i2vgen-xl. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 2/3)
+Model ali-vilab/i2vgen-xl not found (404), skipping to next model
+❌ Model ali-vilab/i2vgen-xl not found (404), trying next model
+Trying Replicate model: anotherjesse/zeroscope-v2-576w
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 1/3)
+Rate limit hit for model anotherjesse/zeroscope-v2-576w. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 2/3)
+Model anotherjesse/zeroscope-v2-576w not found (404), skipping to next model
+❌ Model anotherjesse/zeroscope-v2-576w not found (404), trying next model
+Trying Replicate model: cjwbw/text2video-zero
+Starting prediction for model cjwbw/text2video-zero (attempt 1/3)
+Rate limit hit for model cjwbw/text2video-zero. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model cjwbw/text2video-zero (attempt 2/3)
+Model cjwbw/text2video-zero not found (404), skipping to next model
+❌ Model cjwbw/text2video-zero not found (404), trying next model
+Trying Replicate model: bytedance/seedance-1-lite
+Starting prediction for model bytedance/seedance-1-lite (attempt 1/3)
+Rate limit hit for model bytedance/seedance-1-lite. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model bytedance/seedance-1-lite (attempt 2/3)
+💳 Model bytedance/seedance-1-lite requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with sta
+Trying Replicate model: bytedance/seedance-1-pro
+Starting prediction for model bytedance/seedance-1-pro (attempt 1/3)
+Rate limit hit for model bytedance/seedance-1-pro. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model bytedance/seedance-1-pro (attempt 2/3)
+💳 Model bytedance/seedance-1-pro requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with stat
+Trying Replicate model: kwaivgi/kling-v2.5-turbo-pro
+Starting prediction for model kwaivgi/kling-v2.5-turbo-pro (attempt 1/3)
+Rate limit hit for model kwaivgi/kling-v2.5-turbo-pro. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model kwaivgi/kling-v2.5-turbo-pro (attempt 2/3)
+💳 Model kwaivgi/kling-v2.5-turbo-pro requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with 
+Trying Replicate model: google/veo-3.1
+Starting prediction for model google/veo-3.1 (attempt 1/3)
+Rate limit hit for model google/veo-3.1. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model google/veo-3.1 (attempt 2/3)
+💳 Model google/veo-3.1 requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Pay
+Trying Replicate model: luma/ray
+Starting prediction for model luma/ray (attempt 1/3)
+Rate limit hit for model luma/ray. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model luma/ray (attempt 2/3)
+💳 Model luma/ray requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment R
+Replicate error details: {
+  message: 'All text-to-video models failed:\n' +
+    'meta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'wan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to \n' +
+    'wavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit t\n' +
+    'ali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'anotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'cjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'bytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to r\n' +
+    'bytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to ru\n' +
+    'kwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit t\n' +
+    'google/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to run this mod\n' +
+    'luma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to run this model. Go',
+  status: undefined,
+  response: undefined
+}
+ POST /api/generate-video 404 in 124370ms
+Trying model: google/veo-3.1-fast
+Attempting to call fal.ai model: google/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for google/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3.1-fast
+fal.subscribe (wrapped) failed for google/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3.1-fast
+fal.queue.subscribe failed for google/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3.1-fast
+fal.run failed for google/veo-3.1-fast: Not Found
+❌ Model google/veo-3.1-fast failed: Not Found 
+Trying model: fal-ai/veo-3.1-fast
+Attempting to call fal.ai model: fal-ai/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for fal-ai/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: fal-ai/veo-3.1-fast
+fal.subscribe (wrapped) failed for fal-ai/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: fal-ai/veo-3.1-fast
+fal.queue.subscribe failed for fal-ai/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/veo-3.1-fast
+fal.run failed for fal-ai/veo-3.1-fast: Not Found
+❌ Model fal-ai/veo-3.1-fast failed: Not Found 
+Trying model: google/veo-3-fast
+Attempting to call fal.ai model: google/veo-3-fast with fal.subscribe
+fal.subscribe failed for google/veo-3-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3-fast
+fal.subscribe (wrapped) failed for google/veo-3-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3-fast
+fal.queue.subscribe failed for google/veo-3-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3-fast
+fal.run failed for google/veo-3-fast: Not Found
+❌ Model google/veo-3-fast failed: Not Found 
+Trying model: fal-ai/sora-2/text-to-video
+Attempting to call fal.ai model: fal-ai/sora-2/text-to-video with fal.subscribe
+fal.subscribe failed for fal-ai/sora-2/text-to-video: Forbidden 403
+Trying fal.subscribe with wrapped input for model: fal-ai/sora-2/text-to-video
+fal.subscribe (wrapped) failed for fal-ai/sora-2/text-to-video: Forbidden
+Trying fal.queue.subscribe for model: fal-ai/sora-2/text-to-video
+fal.queue.subscribe failed for fal-ai/sora-2/text-to-video: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/sora-2/text-to-video
+fal.run failed for fal-ai/sora-2/text-to-video: Forbidden
+❌ Model fal-ai/sora-2/text-to-video failed: Forbidden 
+fal.ai failed, will try Replicate API as fallback
+Replicate API connected. Available models count: 25
+Trying Replicate model: meta/animate-anyone
+Starting prediction for model meta/animate-anyone (attempt 1/3)
+Model meta/animate-anyone not found (404), skipping to next model
+❌ Model meta/animate-anyone not found (404), trying next model
+Trying Replicate model: wan-video/wan-2.5-i2v-fast
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 1/3)
+Rate limit hit for model wan-video/wan-2.5-i2v-fast. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 2/3)
+💳 Model wan-video/wan-2.5-i2v-fast requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with st
+Trying Replicate model: wavespeedai/wan-2.1-i2v-480p
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 1/3)
+Rate limit hit for model wavespeedai/wan-2.1-i2v-480p. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 2/3)
+💳 Model wavespeedai/wan-2.1-i2v-480p requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with 
+Trying Replicate model: ali-vilab/i2vgen-xl
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 1/3)
+Rate limit hit for model ali-vilab/i2vgen-xl. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 2/3)
+Model ali-vilab/i2vgen-xl not found (404), skipping to next model
+❌ Model ali-vilab/i2vgen-xl not found (404), trying next model
+Trying Replicate model: anotherjesse/zeroscope-v2-576w
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 1/3)
+Rate limit hit for model anotherjesse/zeroscope-v2-576w. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 2/3)
+Model anotherjesse/zeroscope-v2-576w not found (404), skipping to next model
+❌ Model anotherjesse/zeroscope-v2-576w not found (404), trying next model
+Trying Replicate model: cjwbw/text2video-zero
+Starting prediction for model cjwbw/text2video-zero (attempt 1/3)
+Rate limit hit for model cjwbw/text2video-zero. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model cjwbw/text2video-zero (attempt 2/3)
+Model cjwbw/text2video-zero not found (404), skipping to next model
+❌ Model cjwbw/text2video-zero not found (404), trying next model
+Trying Replicate model: bytedance/seedance-1-lite
+Starting prediction for model bytedance/seedance-1-lite (attempt 1/3)
+Rate limit hit for model bytedance/seedance-1-lite. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model bytedance/seedance-1-lite (attempt 2/3)
+💳 Model bytedance/seedance-1-lite requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with sta
+Trying Replicate model: bytedance/seedance-1-pro
+Starting prediction for model bytedance/seedance-1-pro (attempt 1/3)
+ ○ Compiling / ...
+Rate limit hit for model bytedance/seedance-1-pro. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model bytedance/seedance-1-pro (attempt 2/3)
+💳 Model bytedance/seedance-1-pro requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with stat
+Trying Replicate model: kwaivgi/kling-v2.5-turbo-pro
+Starting prediction for model kwaivgi/kling-v2.5-turbo-pro (attempt 1/3)
+ ✓ Compiled / in 12.9s (1249 modules)
+ GET / 200 in 13913ms
+ ✓ Compiled in 1311ms (621 modules)
+Rate limit hit for model kwaivgi/kling-v2.5-turbo-pro. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model kwaivgi/kling-v2.5-turbo-pro (attempt 2/3)
+💳 Model kwaivgi/kling-v2.5-turbo-pro requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with 
+Trying Replicate model: google/veo-3.1
+Starting prediction for model google/veo-3.1 (attempt 1/3)
+Rate limit hit for model google/veo-3.1. Waiting 6 seconds before retry (attempt 1/3)...
+Starting prediction for model google/veo-3.1 (attempt 2/3)
+💳 Model google/veo-3.1 requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Pay
+Trying Replicate model: luma/ray
+Starting prediction for model luma/ray (attempt 1/3)
+Rate limit hit for model luma/ray. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model luma/ray (attempt 2/3)
+💳 Model luma/ray requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment R
+Replicate error details: {
+  message: 'All text-to-video models failed:\n' +
+    'meta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'wan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to \n' +
+    'wavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit t\n' +
+    'ali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'anotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'cjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'bytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to r\n' +
+    'bytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to ru\n' +
+    'kwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit t\n' +
+    'google/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to run this mod\n' +
+    'luma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to run this model. Go',
+  status: undefined,
+  response: undefined
+}
+ POST /api/generate-video 404 in 121440ms
+ ✓ Compiled /api/generate-video in 337ms (700 modules)
+Trying model: google/veo-3.1-fast
+Attempting to call fal.ai model: google/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for google/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3.1-fast
+fal.subscribe (wrapped) failed for google/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3.1-fast
+fal.queue.subscribe failed for google/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3.1-fast
+fal.run failed for google/veo-3.1-fast: Not Found
+❌ Model google/veo-3.1-fast failed: Not Found 
+Trying model: fal-ai/veo-3.1-fast
+Attempting to call fal.ai model: fal-ai/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for fal-ai/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: fal-ai/veo-3.1-fast
+fal.subscribe (wrapped) failed for fal-ai/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: fal-ai/veo-3.1-fast
+fal.queue.subscribe failed for fal-ai/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/veo-3.1-fast
+fal.run failed for fal-ai/veo-3.1-fast: Not Found
+❌ Model fal-ai/veo-3.1-fast failed: Not Found 
+Trying model: google/veo-3-fast
+Attempting to call fal.ai model: google/veo-3-fast with fal.subscribe
+fal.subscribe failed for google/veo-3-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3-fast
+fal.subscribe (wrapped) failed for google/veo-3-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3-fast
+fal.queue.subscribe failed for google/veo-3-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3-fast
+fal.run failed for google/veo-3-fast: Not Found
+❌ Model google/veo-3-fast failed: Not Found 
+Trying model: fal-ai/sora-2/text-to-video
+Attempting to call fal.ai model: fal-ai/sora-2/text-to-video with fal.subscribe
+fal.subscribe failed for fal-ai/sora-2/text-to-video: Forbidden 403
+Trying fal.subscribe with wrapped input for model: fal-ai/sora-2/text-to-video
+fal.subscribe (wrapped) failed for fal-ai/sora-2/text-to-video: Forbidden
+Trying fal.queue.subscribe for model: fal-ai/sora-2/text-to-video
+fal.queue.subscribe failed for fal-ai/sora-2/text-to-video: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/sora-2/text-to-video
+fal.run failed for fal-ai/sora-2/text-to-video: Forbidden
+❌ Model fal-ai/sora-2/text-to-video failed: Forbidden 
+fal.ai failed, will try Replicate API as fallback
+Replicate API connected. Available models count: 25
+Trying Replicate model: meta/animate-anyone
+Starting prediction for model meta/animate-anyone (attempt 1/3)
+Model meta/animate-anyone not found (404), skipping to next model
+❌ Model meta/animate-anyone not found (404), trying next model
+Trying Replicate model: wan-video/wan-2.5-i2v-fast
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 1/3)
+Rate limit hit for model wan-video/wan-2.5-i2v-fast. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 2/3)
+💳 Model wan-video/wan-2.5-i2v-fast requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with st
+Trying Replicate model: wavespeedai/wan-2.1-i2v-480p
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 1/3)
+Rate limit hit for model wavespeedai/wan-2.1-i2v-480p. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 2/3)
+💳 Model wavespeedai/wan-2.1-i2v-480p requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with 
+Trying Replicate model: ali-vilab/i2vgen-xl
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 1/3)
+Rate limit hit for model ali-vilab/i2vgen-xl. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 2/3)
+Model ali-vilab/i2vgen-xl not found (404), skipping to next model
+❌ Model ali-vilab/i2vgen-xl not found (404), trying next model
+Trying Replicate model: anotherjesse/zeroscope-v2-576w
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 1/3)
+Rate limit hit for model anotherjesse/zeroscope-v2-576w. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 2/3)
+Model anotherjesse/zeroscope-v2-576w not found (404), skipping to next model
+❌ Model anotherjesse/zeroscope-v2-576w not found (404), trying next model
+Trying Replicate model: cjwbw/text2video-zero
+Starting prediction for model cjwbw/text2video-zero (attempt 1/3)
+Rate limit hit for model cjwbw/text2video-zero. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model cjwbw/text2video-zero (attempt 2/3)
+Model cjwbw/text2video-zero not found (404), skipping to next model
+❌ Model cjwbw/text2video-zero not found (404), trying next model
+Trying Replicate model: bytedance/seedance-1-lite
+Starting prediction for model bytedance/seedance-1-lite (attempt 1/3)
+Rate limit hit for model bytedance/seedance-1-lite. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model bytedance/seedance-1-lite (attempt 2/3)
+💳 Model bytedance/seedance-1-lite requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with sta
+Trying Replicate model: bytedance/seedance-1-pro
+Starting prediction for model bytedance/seedance-1-pro (attempt 1/3)
+Rate limit hit for model bytedance/seedance-1-pro. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model bytedance/seedance-1-pro (attempt 2/3)
+💳 Model bytedance/seedance-1-pro requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with stat
+Trying Replicate model: kwaivgi/kling-v2.5-turbo-pro
+Starting prediction for model kwaivgi/kling-v2.5-turbo-pro (attempt 1/3)
+Rate limit hit for model kwaivgi/kling-v2.5-turbo-pro. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model kwaivgi/kling-v2.5-turbo-pro (attempt 2/3)
+💳 Model kwaivgi/kling-v2.5-turbo-pro requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with 
+Trying Replicate model: google/veo-3.1
+Starting prediction for model google/veo-3.1 (attempt 1/3)
+Rate limit hit for model google/veo-3.1. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model google/veo-3.1 (attempt 2/3)
+💳 Model google/veo-3.1 requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Pay
+Trying Replicate model: luma/ray
+Starting prediction for model luma/ray (attempt 1/3)
+Rate limit hit for model luma/ray. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model luma/ray (attempt 2/3)
+💳 Model luma/ray requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment R
+Replicate error details: {
+  message: 'All text-to-video models failed:\n' +
+    'meta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'wan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to \n' +
+    'wavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit t\n' +
+    'ali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'anotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'cjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'bytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to r\n' +
+    'bytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to ru\n' +
+    'kwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit t\n' +
+    'google/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to run this mod\n' +
+    'luma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to run this model. Go',
+  status: undefined,
+  response: undefined
+}
+ POST /api/generate-video 404 in 121402ms
+Trying model: google/veo-3.1-fast
+Attempting to call fal.ai model: google/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for google/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3.1-fast
+fal.subscribe (wrapped) failed for google/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3.1-fast
+fal.queue.subscribe failed for google/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3.1-fast
+fal.run failed for google/veo-3.1-fast: Not Found
+❌ Model google/veo-3.1-fast failed: Not Found 
+Trying model: fal-ai/veo-3.1-fast
+Attempting to call fal.ai model: fal-ai/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for fal-ai/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: fal-ai/veo-3.1-fast
+fal.subscribe (wrapped) failed for fal-ai/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: fal-ai/veo-3.1-fast
+fal.queue.subscribe failed for fal-ai/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/veo-3.1-fast
+fal.run failed for fal-ai/veo-3.1-fast: Not Found
+❌ Model fal-ai/veo-3.1-fast failed: Not Found 
+Trying model: google/veo-3-fast
+Attempting to call fal.ai model: google/veo-3-fast with fal.subscribe
+fal.subscribe failed for google/veo-3-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3-fast
+fal.subscribe (wrapped) failed for google/veo-3-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3-fast
+fal.queue.subscribe failed for google/veo-3-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3-fast
+fal.run failed for google/veo-3-fast: Not Found
+❌ Model google/veo-3-fast failed: Not Found 
+Trying model: fal-ai/sora-2/text-to-video
+Attempting to call fal.ai model: fal-ai/sora-2/text-to-video with fal.subscribe
+fal.subscribe failed for fal-ai/sora-2/text-to-video: Forbidden 403
+Trying fal.subscribe with wrapped input for model: fal-ai/sora-2/text-to-video
+fal.subscribe (wrapped) failed for fal-ai/sora-2/text-to-video: Forbidden
+Trying fal.queue.subscribe for model: fal-ai/sora-2/text-to-video
+fal.queue.subscribe failed for fal-ai/sora-2/text-to-video: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/sora-2/text-to-video
+fal.run failed for fal-ai/sora-2/text-to-video: Forbidden
+❌ Model fal-ai/sora-2/text-to-video failed: Forbidden 
+fal.ai failed, will try Replicate API as fallback
+Replicate API connected. Available models count: 25
+Trying Replicate model: meta/animate-anyone
+Starting prediction for model meta/animate-anyone (attempt 1/3)
+Model meta/animate-anyone not found (404), skipping to next model
+❌ Model meta/animate-anyone not found (404), trying next model
+Trying Replicate model: wan-video/wan-2.5-i2v-fast
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 1/3)
+Rate limit hit for model wan-video/wan-2.5-i2v-fast. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 2/3)
+💳 Model wan-video/wan-2.5-i2v-fast requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with st
+Trying Replicate model: wavespeedai/wan-2.1-i2v-480p
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 1/3)
+Rate limit hit for model wavespeedai/wan-2.1-i2v-480p. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 2/3)
+💳 Model wavespeedai/wan-2.1-i2v-480p requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with 
+Trying Replicate model: ali-vilab/i2vgen-xl
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 1/3)
+Rate limit hit for model ali-vilab/i2vgen-xl. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 2/3)
+Model ali-vilab/i2vgen-xl not found (404), skipping to next model
+❌ Model ali-vilab/i2vgen-xl not found (404), trying next model
+Trying Replicate model: anotherjesse/zeroscope-v2-576w
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 1/3)
+Rate limit hit for model anotherjesse/zeroscope-v2-576w. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 2/3)
+Model anotherjesse/zeroscope-v2-576w not found (404), skipping to next model
+❌ Model anotherjesse/zeroscope-v2-576w not found (404), trying next model
+Trying Replicate model: cjwbw/text2video-zero
+Starting prediction for model cjwbw/text2video-zero (attempt 1/3)
+Rate limit hit for model cjwbw/text2video-zero. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model cjwbw/text2video-zero (attempt 2/3)
+Model cjwbw/text2video-zero not found (404), skipping to next model
+❌ Model cjwbw/text2video-zero not found (404), trying next model
+Trying Replicate model: bytedance/seedance-1-lite
+Starting prediction for model bytedance/seedance-1-lite (attempt 1/3)
+Rate limit hit for model bytedance/seedance-1-lite. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model bytedance/seedance-1-lite (attempt 2/3)
+💳 Model bytedance/seedance-1-lite requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with sta
+Trying Replicate model: bytedance/seedance-1-pro
+Starting prediction for model bytedance/seedance-1-pro (attempt 1/3)
+Rate limit hit for model bytedance/seedance-1-pro. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model bytedance/seedance-1-pro (attempt 2/3)
+💳 Model bytedance/seedance-1-pro requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with stat
+Trying Replicate model: kwaivgi/kling-v2.5-turbo-pro
+Starting prediction for model kwaivgi/kling-v2.5-turbo-pro (attempt 1/3)
+Rate limit hit for model kwaivgi/kling-v2.5-turbo-pro. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model kwaivgi/kling-v2.5-turbo-pro (attempt 2/3)
+💳 Model kwaivgi/kling-v2.5-turbo-pro requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with 
+Trying Replicate model: google/veo-3.1
+Starting prediction for model google/veo-3.1 (attempt 1/3)
+Rate limit hit for model google/veo-3.1. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model google/veo-3.1 (attempt 2/3)
+💳 Model google/veo-3.1 requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Pay
+Trying Replicate model: luma/ray
+Starting prediction for model luma/ray (attempt 1/3)
+Rate limit hit for model luma/ray. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model luma/ray (attempt 2/3)
+💳 Model luma/ray requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment R
+Replicate error details: {
+  message: 'All text-to-video models failed:\n' +
+    'meta/animate-anyone: Request to https://api.replicate.com/v1/models/meta/animate-anyone/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'wan-video/wan-2.5-i2v-fast: Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to \n' +
+    'wavespeedai/wan-2.1-i2v-480p: Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit t\n' +
+    'ali-vilab/i2vgen-xl: Request to https://api.replicate.com/v1/models/ali-vilab/i2vgen-xl/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'anotherjesse/zeroscope-v2-576w: Request to https://api.replicate.com/v1/models/anotherjesse/zeroscope-v2-576w/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'cjwbw/text2video-zero: Request to https://api.replicate.com/v1/models/cjwbw/text2video-zero/predictions failed with status 404 Not Found: {"detail":"The requested resource could not be found.","status":404}\n' +
+    '.\n' +
+    'bytedance/seedance-1-lite: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-lite/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to r\n' +
+    'bytedance/seedance-1-pro: Request to https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to ru\n' +
+    'kwaivgi/kling-v2.5-turbo-pro: Request to https://api.replicate.com/v1/models/kwaivgi/kling-v2.5-turbo-pro/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit t\n' +
+    'google/veo-3.1: Request to https://api.replicate.com/v1/models/google/veo-3.1/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to run this mod\n' +
+    'luma/ray: Request to https://api.replicate.com/v1/models/luma/ray/predictions failed with status 402 Payment Required: {"title":"Insufficient credit","detail":"You have insufficient credit to run this model. Go',
+  status: undefined,
+  response: undefined
+}
+ POST /api/generate-video 404 in 123857ms
+Trying model: google/veo-3.1-fast
+Attempting to call fal.ai model: google/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for google/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3.1-fast
+fal.subscribe (wrapped) failed for google/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3.1-fast
+fal.queue.subscribe failed for google/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3.1-fast
+fal.run failed for google/veo-3.1-fast: Not Found
+❌ Model google/veo-3.1-fast failed: Not Found 
+Trying model: fal-ai/veo-3.1-fast
+Attempting to call fal.ai model: fal-ai/veo-3.1-fast with fal.subscribe
+fal.subscribe failed for fal-ai/veo-3.1-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: fal-ai/veo-3.1-fast
+fal.subscribe (wrapped) failed for fal-ai/veo-3.1-fast: Not Found
+Trying fal.queue.subscribe for model: fal-ai/veo-3.1-fast
+fal.queue.subscribe failed for fal-ai/veo-3.1-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/veo-3.1-fast
+fal.run failed for fal-ai/veo-3.1-fast: Not Found
+❌ Model fal-ai/veo-3.1-fast failed: Not Found 
+Trying model: google/veo-3-fast
+Attempting to call fal.ai model: google/veo-3-fast with fal.subscribe
+fal.subscribe failed for google/veo-3-fast: Not Found 404
+Trying fal.subscribe with wrapped input for model: google/veo-3-fast
+fal.subscribe (wrapped) failed for google/veo-3-fast: Not Found
+Trying fal.queue.subscribe for model: google/veo-3-fast
+fal.queue.subscribe failed for google/veo-3-fast: fal.queue.subscribe is not a function
+Trying fal.run for model: google/veo-3-fast
+fal.run failed for google/veo-3-fast: Not Found
+❌ Model google/veo-3-fast failed: Not Found 
+Trying model: fal-ai/sora-2/text-to-video
+Attempting to call fal.ai model: fal-ai/sora-2/text-to-video with fal.subscribe
+fal.subscribe failed for fal-ai/sora-2/text-to-video: Forbidden 403
+Trying fal.subscribe with wrapped input for model: fal-ai/sora-2/text-to-video
+fal.subscribe (wrapped) failed for fal-ai/sora-2/text-to-video: Forbidden
+Trying fal.queue.subscribe for model: fal-ai/sora-2/text-to-video
+fal.queue.subscribe failed for fal-ai/sora-2/text-to-video: fal.queue.subscribe is not a function
+Trying fal.run for model: fal-ai/sora-2/text-to-video
+fal.run failed for fal-ai/sora-2/text-to-video: Forbidden
+❌ Model fal-ai/sora-2/text-to-video failed: Forbidden 
+fal.ai failed, will try Replicate API as fallback
+Replicate API connected. Available models count: 25
+Trying Replicate model: meta/animate-anyone
+Starting prediction for model meta/animate-anyone (attempt 1/3)
+Model meta/animate-anyone not found (404), skipping to next model
+❌ Model meta/animate-anyone not found (404), trying next model
+Trying Replicate model: wan-video/wan-2.5-i2v-fast
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 1/3)
+Rate limit hit for model wan-video/wan-2.5-i2v-fast. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model wan-video/wan-2.5-i2v-fast (attempt 2/3)
+💳 Model wan-video/wan-2.5-i2v-fast requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wan-video/wan-2.5-i2v-fast/predictions failed with st
+Trying Replicate model: wavespeedai/wan-2.1-i2v-480p
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 1/3)
+Rate limit hit for model wavespeedai/wan-2.1-i2v-480p. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model wavespeedai/wan-2.1-i2v-480p (attempt 2/3)
+💳 Model wavespeedai/wan-2.1-i2v-480p requires payment (skipping to free models): Request to https://api.replicate.com/v1/models/wavespeedai/wan-2.1-i2v-480p/predictions failed with 
+Trying Replicate model: ali-vilab/i2vgen-xl
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 1/3)
+Rate limit hit for model ali-vilab/i2vgen-xl. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model ali-vilab/i2vgen-xl (attempt 2/3)
+Model ali-vilab/i2vgen-xl not found (404), skipping to next model
+❌ Model ali-vilab/i2vgen-xl not found (404), trying next model
+Trying Replicate model: anotherjesse/zeroscope-v2-576w
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 1/3)
+Rate limit hit for model anotherjesse/zeroscope-v2-576w. Waiting 8 seconds before retry (attempt 1/3)...
+Starting prediction for model anotherjesse/zeroscope-v2-576w (attempt 2/3)
+Model anotherjesse/zeroscope-v2-576w not found (404), skipping to next model
+❌ Model anotherjesse/zeroscope-v2-576w not found (404), trying next model
+Trying Replicate model: cjwbw/text2video-zero
+Starting prediction for model cjwbw/text2video-zero (attempt 1/3)
+Rate limit hit for model cjwbw/text2video-zero. Waiting 9 seconds before retry (attempt 1/3)...
+Starting prediction for model cjwbw/text2video-zero (attempt 2/3)
+Model cjwbw/text2video-zero not found (404), skipping to next model
+❌ Model cjwbw/text2video-zero not found (404), trying next model
+Trying Replicate model: bytedance/seedance-1-lite
+Starting prediction for model bytedance/seedance-1-lite (attempt 1/3)
+Rate limit hit for model bytedance/seedance-1-lite. Waiting 8 seconds before retry (attempt 1/3)...

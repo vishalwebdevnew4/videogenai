@@ -62,7 +62,7 @@ export default function PaymentsPage() {
 
   if (status === 'loading' || loading) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center pt-16 sm:pt-20">
         <div className="w-16 h-16 border-4 border-purple-400 border-t-transparent rounded-full animate-spin" />
       </main>
     )
@@ -73,7 +73,7 @@ export default function PaymentsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-4 py-16">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <motion.div
